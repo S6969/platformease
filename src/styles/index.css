@@ -1156,14 +1156,29 @@ body {
     overflow: hidden;
 }
 
-.mini-chart canvas {
-    max-width: 280px;
-    max-height: 120px;
-    width: 280px;
-    height: 120px;
-    object-fit: contain;
-    border: none;
-    outline: none;
+.css-chart {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    height: 100px;
+    padding: 10px;
+    width: 100%;
+    max-width: 260px;
+}
+
+.chart-bar {
+    flex: 1;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border-radius: var(--radius-sm);
+    min-height: 20px;
+    transition: var(--transition);
+    opacity: 0.8;
+    box-shadow: var(--shadow-sm);
+}
+
+.chart-bar:hover {
+    opacity: 1;
+    transform: scale(1.05);
 }
 
 .partnership-list {

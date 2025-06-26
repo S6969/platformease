@@ -165,7 +165,16 @@ const DashboardPreview = () => {
               <div className="chart-container">
                 <h4>Revenue Trends</h4>
                 <div className="mini-chart">
-                  <canvas ref={chartRef} width="280" height="120"></canvas>
+                  <div className="css-chart">
+                    <div className="chart-bar" style={{height: '60%'}}></div>
+                    <div className="chart-bar" style={{height: '75%'}}></div>
+                    <div className="chart-bar" style={{height: '45%'}}></div>
+                    <div className="chart-bar" style={{height: '85%'}}></div>
+                    <div className="chart-bar" style={{height: '70%'}}></div>
+                    <div className="chart-bar" style={{height: '90%'}}></div>
+                    <div className="chart-bar" style={{height: '65%'}}></div>
+                    <div className="chart-bar" style={{height: '95%'}}></div>
+                  </div>
                 </div>
               </div>
               <div className="partnership-list">
