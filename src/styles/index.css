@@ -1,35 +1,77 @@
 :root {
-    --primary: #3A86FF;
-    --primary-dark: #2A75F5;
-    --primary-light: #4F94FF;
-    --secondary: #06D6A0;
-    --secondary-dark: #05C695;
-    --secondary-light: #26E4B8;
-    --accent: #FF6B6B;
-    --accent-dark: #FF5252;
-    --accent-light: #FF8A80;
-    --background: #F8F9FA;
-    --background-alt: #F1F3F4;
+    /* Enhanced Elegant Color Palette */
+    --primary: #6366F1;
+    --primary-dark: #4F46E5;
+    --primary-light: #8B5CF6;
+    --primary-ultra-light: #F3F4F6;
+    --secondary: #10B981;
+    --secondary-dark: #059669;
+    --secondary-light: #34D399;
+    --accent: #F59E0B;
+    --accent-dark: #D97706;
+    --accent-light: #FCD34D;
+    --accent-coral: #EC4899;
+    --accent-coral-dark: #DB2777;
+    
+    /* Sophisticated Neutrals */
+    --background: #FAFBFC;
+    --background-alt: #F7F8FA;
+    --background-dark: #1F2937;
+    --background-gradient: linear-gradient(135deg, #FAFBFC 0%, #F7F8FA 25%, #F3F4F6 50%, #FAFBFC 100%);
     --card: #FFFFFF;
-    --card-hover: #FEFEFE;
-    --text-dark: #2B2D42;
-    --text-mid: #4A5568;
-    --text-light: #718096;
-    --text-lighter: #A0AEC0;
-    --border: #E2E8F0;
-    --border-light: #EDF2F7;
-    --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.12);
-    --shadow-large: 0 10px 40px rgba(0, 0, 0, 0.1);
-    --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.15);
-    --glow-primary: 0 0 30px rgba(58, 134, 255, 0.3);
-    --glow-secondary: 0 0 30px rgba(6, 214, 160, 0.3);
+    --card-hover: #FDFDFE;
+    --card-premium: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));
+    
+    /* Refined Typography Colors */
+    --text-primary: #111827;
+    --text-secondary: #374151;
+    --text-tertiary: #6B7280;
+    --text-quaternary: #9CA3AF;
+    --text-inverse: #F9FAFB;
+    
+    /* Elegant Borders & Dividers */
+    --border-light: #F3F4F6;
+    --border-medium: #E5E7EB;
+    --border-dark: #D1D5DB;
+    --border-accent: linear-gradient(135deg, var(--primary), var(--secondary));
+    
+    /* Premium Shadows & Effects */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.03), 0 1px 2px rgba(0, 0, 0, 0.02);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.03);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.08), 0 4px 6px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
+    --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.12), 0 12px 20px rgba(0, 0, 0, 0.08);
+    --shadow-inner: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+    --shadow-colored: 0 20px 40px rgba(99, 102, 241, 0.15);
+    --shadow-colored-hover: 0 25px 50px rgba(99, 102, 241, 0.25);
+    
+    /* Elegant Glows */
+    --glow-primary: 0 0 40px rgba(99, 102, 241, 0.3);
+    --glow-secondary: 0 0 40px rgba(16, 185, 129, 0.3);
+    --glow-accent: 0 0 40px rgba(245, 158, 11, 0.3);
+    --glow-soft: 0 0 60px rgba(99, 102, 241, 0.1);
+    
+    /* Refined Border Radius */
+    --radius-sm: 6px;
     --radius: 12px;
-    --radius-large: 20px;
-    --radius-xl: 28px;
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-2xl: 32px;
+    --radius-full: 9999px;
+    
+    /* Smooth Transitions */
+    --transition-ultra-fast: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-ultra-slow: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Glass Morphism Effects */
+    --glass-light: rgba(255, 255, 255, 0.15);
+    --glass-medium: rgba(255, 255, 255, 0.25);
+    --glass-dark: rgba(255, 255, 255, 0.05);
+    --backdrop-blur: blur(20px);
+    --backdrop-blur-strong: blur(40px);
 }
 
 * {
@@ -44,10 +86,13 @@ html {
 
 body {
     font-family: 'Inter', sans-serif;
-    background: linear-gradient(135deg, var(--background) 0%, var(--background-alt) 100%);
-    color: var(--text-mid);
+    background: var(--background-gradient);
+    color: var(--text-secondary);
     line-height: 1.6;
     overflow-x: hidden;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
@@ -63,15 +108,18 @@ body {
     left: 0;
     right: 0;
     z-index: 1000;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(20px);
+    background: var(--glass-medium);
+    backdrop-filter: var(--backdrop-blur);
     border-bottom: 1px solid var(--border-light);
     transition: var(--transition);
+    -webkit-backdrop-filter: var(--backdrop-blur);
 }
 
 .header.scrolled {
-    background: rgba(255, 255, 255, 0.98);
-    box-shadow: var(--shadow);
+    background: var(--glass-light);
+    box-shadow: var(--shadow-lg);
+    backdrop-filter: var(--backdrop-blur-strong);
+    -webkit-backdrop-filter: var(--backdrop-blur-strong);
 }
 
 .navbar {
@@ -92,14 +140,16 @@ body {
     font-family: 'Poppins', sans-serif;
     font-size: 24px;
     font-weight: 700;
-    color: var(--text-dark);
+    color: var(--text-primary);
 }
 
 .logo-highlight {
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+    background-size: 200% 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    animation: gradientShift 4s ease-in-out infinite;
 }
 
 .nav-links {
@@ -110,7 +160,7 @@ body {
 
 .nav-link {
     text-decoration: none;
-    color: var(--text-mid);
+    color: var(--text-secondary);
     font-weight: 500;
     transition: var(--transition);
     position: relative;
@@ -206,36 +256,43 @@ body {
 .btn-primary {
     background: linear-gradient(135deg, var(--primary), var(--primary-dark));
     color: white;
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-hover);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-colored-hover);
+    background: linear-gradient(135deg, var(--primary-light), var(--primary));
 }
 
 .btn-secondary {
     background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
     color: white;
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .btn-secondary:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 25px 50px rgba(16, 185, 129, 0.25);
+    background: linear-gradient(135deg, var(--secondary-light), var(--secondary));
 }
 
 .btn-outline {
-    background: transparent;
-    color: var(--text-mid);
-    border: 2px solid var(--border);
+    background: var(--glass-light);
+    color: var(--text-secondary);
+    border: 2px solid var(--border-medium);
+    backdrop-filter: var(--backdrop-blur);
+    -webkit-backdrop-filter: var(--backdrop-blur);
 }
 
 .btn-outline:hover {
     background: var(--primary);
     color: white;
     border-color: var(--primary);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-colored);
 }
 
 .btn-large {
@@ -257,14 +314,14 @@ body {
     font-family: 'Poppins', sans-serif;
     font-size: 42px;
     font-weight: 700;
-    color: var(--text-dark);
+    color: var(--text-primary);
     margin-bottom: 20px;
     line-height: 1.2;
 }
 
 .section-title p {
     font-size: 18px;
-    color: var(--text-light);
+    color: var(--text-tertiary);
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.6;
@@ -324,7 +381,7 @@ body {
     font-family: 'Poppins', sans-serif;
     font-size: 52px;
     font-weight: 800;
-    color: var(--text-dark);
+    color: var(--text-primary);
     line-height: 1.1;
     margin-bottom: 32px;
     position: relative;
@@ -380,7 +437,7 @@ body {
 
 .hero-description {
     font-size: 18px;
-    color: var(--text-light);
+    color: var(--text-tertiary);
     margin-bottom: 40px;
     line-height: 1.7;
 }
@@ -487,19 +544,21 @@ body {
 .stat-number {
     font-size: 36px;
     font-weight: 800;
-    color: var(--text-dark);
+    color: var(--text-primary);
     margin-bottom: 10px;
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+    background-size: 200% 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     position: relative;
+    animation: gradientShift 4s ease-in-out infinite;
 }
 
 .stat-label {
     font-size: 15px;
-    color: var(--text-mid);
+    color: var(--text-secondary);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -520,19 +579,18 @@ body {
     align-items: center;
     gap: 12px;
     padding: 16px 28px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
-    border-radius: var(--radius-large);
-    backdrop-filter: blur(25px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: var(--text-mid);
+    background: var(--card-premium);
+    border-radius: var(--radius-xl);
+    backdrop-filter: var(--backdrop-blur);
+    -webkit-backdrop-filter: var(--backdrop-blur);
+    border: 1px solid var(--border-light);
+    color: var(--text-secondary);
     font-size: 15px;
     font-weight: 600;
     transition: var(--transition-slow);
     position: relative;
     overflow: hidden;
-    box-shadow: 
-        0 8px 32px rgba(0, 0, 0, 0.1),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    box-shadow: var(--shadow-xl);
 }
 
 .badge::before {
@@ -551,11 +609,10 @@ body {
 }
 
 .badge:hover {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.1));
+    background: var(--glass-medium);
     transform: translateY(-3px) scale(1.02);
-    box-shadow: 
-        0 12px 40px rgba(0, 0, 0, 0.15),
-        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    box-shadow: var(--shadow-2xl);
+    border-color: var(--border-medium);
 }
 
 .badge i {
