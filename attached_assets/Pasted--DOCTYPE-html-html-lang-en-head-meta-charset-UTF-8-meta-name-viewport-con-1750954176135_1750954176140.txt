@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlatformEase - Connect Entrepreneurs & Partners</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #3A86FF;
+            --secondary: #06D6A0;
+            --accent: #FF6B6B;
+            --background: #F8F9FA;
+            --card: #FFFFFF;
+            --text-dark: #2B2D42;
+            --text-mid: #4A5568;
+            --text-light: #718096;
+            --border: #E2E8F0;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            --radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background);
+            color: var(--text-mid);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            padding: 20px 0;
+            background-color: var(--card);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .logo-highlight {
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-mid);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            border: none;
+            font-size: 16px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #2a75f5;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background-color: #05c695;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(58, 134, 255, 0.05) 0%, rgba(6, 214, 160, 0.05) 100%);
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .graphic {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            height: 400px;
+            background: linear-gradient(135deg, #3A86FF 0%, #06D6A0 100%);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .circle-1 {
+            width: 120px;
+            height: 120px;
+            top: 30px;
+            left: 50px;
+        }
+
+        .circle-2 {
+            width: 80px;
+            height: 80px;
+            bottom: 50px;
+            right: 70px;
+        }
+
+        .circle-3 {
+            width: 60px;
+            height: 60px;
+            top: 150px;
+            right: 40px;
+        }
+
+        .connection {
+            position: absolute;
+            height: 3px;
+            background: white;
+            transform-origin: left;
+        }
+
+        .connection-1 {
+            width: 180px;
+            top: 90px;
+            left: 100px;
+            transform: rotate(30deg);
+        }
+
+        .connection-2 {
+            width: 220px;
+            top: 220px;
+            left: 120px;
+            transform: rotate(-20deg);
+        }
+
+        .node {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .node-1 {
+            top: 70px;
+            left: 90px;
+        }
+
+        .node-2 {
+            top: 200px;
+            left: 300px;
+        }
+
+        .node-3 {
+            top: 280px;
+            left: 120px;
+        }
+
+        /* How It Works Section */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 18px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--card);
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            font-size: 28px;
+        }
+
+        .icon-1 {
+            background: rgba(58, 134, 255, 0.1);
+            color: var(--primary);
+        }
+
+        .icon-2 {
+            background: rgba(6, 214, 160, 0.1);
+            color: var(--secondary);
+        }
+
+        .icon-3 {
+            background: rgba(255, 107, 107, 0.1);
+            color: var(--accent);
+        }
+
+        .card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        /* Revenue Section */
+        .revenue-section {
+            background: linear-gradient(135deg, rgba(58, 134, 255, 0.03) 0%, rgba(6, 214, 160, 0.03) 100%);
+        }
+
+        .revenue-container {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .revenue-illustration {
+            flex: 1;
+            position: relative;
+            height: 400px;
+        }
+
+        .revenue-content {
+            flex: 1;
+        }
+
+        .revenue-content h2 {
+            font-size: 36px;
+            margin-bottom: 25px;
+        }
+
+        .revenue-content h2 span {
+            color: var(--secondary);
+        }
+
+        .revenue-content p {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .revenue-card {
+            background: var(--card);
+            border-radius: var(--radius);
+            padding: 25px;
+            box-shadow: var(--shadow);
+            margin-top: 30px;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .revenue-card p {
+            margin: 0;
+        }
+
+        .revenue-card strong {
+            color: var(--secondary);
+        }
+
+        .pie-chart {
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: conic-gradient(
+                var(--secondary) 0% 30%,
+                var(--primary) 30% 100%
+            );
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: var(--shadow);
+        }
+
+        .chart-label {
+            position: absolute;
+            background: var(--card);
+            padding: 10px 15px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            font-weight: 600;
+        }
+
+        .label-1 {
+            top: 30%;
+            right: 20px;
+            color: var(--secondary);
+        }
+
+        .label-2 {
+            bottom: 30%;
+            left: 20px;
+            color: var(--primary);
+        }
+
+        /* Features Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature {
+            display: flex;
+            gap: 20px;
+        }
+
+        .feature-icon {
+            flex-shrink: 0;
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .feature-text h3 {
+            margin-bottom: 10px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, #2a75f5 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            color: white;
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn-light {
+            background: white;
+            color: var(--primary);
+        }
+
+        .btn-light:hover {
+            background: rgba(255, 255, 255, 0.9);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-content,
+            .revenue-container {
+                flex-direction: column;
+            }
+            
+            .hero-image {
+                order: -1;
+            }
+            
+            .hero-text {
+                text-align: center;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .section {
+                padding: 70px 0;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <div class="logo-text">Platform<span class="logo-highlight">Ease</span></div>
+                </div>
+                <div class="nav-links">
+                    <a href="#">Home</a>
+                    <a href="#">How It Works</a>
+                    <a href="#">Features</a>
+                    <a href="#">Pricing</a>
+                    <a href="#">Contact</a>
+                </div>
+                <div class="auth-buttons">
+                    <a href="#" class="btn btn-outline">Log In</a>
+                    <a href="#" class="btn btn-primary">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Connect. Collaborate. <span>Earn.</span></h1>
+                    <p>PlatformEase bridges entrepreneurs with partners — share skills, traffic, and revenue seamlessly. We never intervene in your partnerships.</p>
+                    <div class="hero-buttons">
+                        <a href="#" class="btn btn-primary">Join as Entrepreneur</a>
+                        <a href="#" class="btn btn-secondary">Join as Partner</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="graphic">
+                        <div class="circle circle-1"></div>
+                        <div class="circle circle-2"></div>
+                        <div class="circle circle-3"></div>
+                        <div class="connection connection-1"></div>
+                        <div class="connection connection-2"></div>
+                        <div class="node node-1"><i class="fas fa-server"></i></div>
+                        <div class="node node-2"><i class="fas fa-chart-line"></i></div>
+                        <div class="node node-3"><i class="fas fa-blog"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>How PlatformEase Works</h2>
+                <p>Connect with the right partners and grow your business together</p>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-icon icon-1">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Connect Partners</h3>
+                    <p>Entrepreneurs offering hosting and domains connect with partners who provide content and traffic.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon icon-2">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Collaborate Seamlessly</h3>
+                    <p>Work together using our platform's tools to manage projects, content, and traffic generation.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon icon-3">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3>Share Revenue</h3>
+                    <p>Partners earn a percentage of revenue from the traffic they bring. Set terms directly with each other.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Revenue Section -->
+    <section class="section revenue-section">
+        <div class="container">
+            <div class="revenue-container">
+                <div class="revenue-illustration">
+                    <div class="pie-chart"></div>
+                    <div class="chart-label label-1">Partner's Share: 30%</div>
+                    <div class="chart-label label-2">Entrepreneur's Share: 70%</div>
+                </div>
+                <div class="revenue-content">
+                    <h2>Fair <span>Revenue Sharing</span> Without Interference</h2>
+                    <p>PlatformEase enables direct negotiation between entrepreneurs and partners. You set the terms, we just facilitate the connection.</p>
+                    <p>Our automated system tracks traffic sources and revenue, ensuring accurate, transparent payouts based on your agreed percentages.</p>
+                    <div class="revenue-card">
+                        <p><strong>Example:</strong> A blogger partner earns 30% of revenue from the traffic they bring to an entrepreneur's hosting service.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose PlatformEase</h2>
+                <p>Everything you need to grow your business through partnerships</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon icon-1">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h3>Direct Partnerships</h3>
+                        <p>Connect directly with complementary partners without intermediaries.</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon icon-2">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h3>Secure Transactions</h3>
+                        <p>All financial transactions are securely handled with encryption.</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon icon-3">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h3>Performance Tracking</h3>
+                        <p>Real-time analytics to monitor traffic, conversions, and revenue.</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon icon-1">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h3>Built-in Communication</h3>
+                        <p>Chat and collaboration tools to streamline your partnership.</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon icon-2">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h3>Custom Agreements</h3>
+                        <p>Create and manage custom revenue-sharing agreements.</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon icon-3">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h3>Rapid Growth</h3>
+                        <p>Scale your business faster by leveraging partner strengths.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Grow Together?</h2>
+            <p>Join PlatformEase today and start forming profitable partnerships with entrepreneurs and content creators.</p>
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-light">Join as Entrepreneur</a>
+                <a href="#" class="btn btn-outline">Join as Partner</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo">
+                        <div class="logo-text">Platform<span class="logo-highlight">Ease</span></div>
+                    </div>
+                    <p style="margin: 20px 0; max-width: 300px;">Connecting entrepreneurs and partners for mutual growth and revenue sharing.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Platform</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">How It Works</a></li>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Success Stories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Partnership Guide</a></li>
+                        <li><a href="#">Community</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Legal</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 PlatformEase. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple animation for cards on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            cards.forEach(card => {
+                card.style.opacity = 0;
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
