@@ -7,8 +7,13 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "description": "",
+  "license": "MIT",
+  "description": "PlatformEase - Domain Owner & Traffic Expert Partnership Platform",
+  "repository": {
+    "type": "git",
+    "url": "file:///C:/Users/mouad/Downloads/platformease"
+  },
+  "homepage": "file:///C:/Users/mouad/Downloads/platformease",
   "dependencies": {
     "@babel/core": "^7.27.7",
     "@babel/preset-env": "^7.27.2",
