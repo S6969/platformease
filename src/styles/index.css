@@ -1925,13 +1925,163 @@ body {
     }
 }
 
+/* Dashboard Action Buttons */
+.stat-action-btn {
+    background: var(--glass-light);
+    border: 1px solid var(--border-medium);
+    color: var(--text-secondary);
+    padding: 6px 12px;
+    border-radius: var(--radius);
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: 8px;
+    backdrop-filter: var(--backdrop-blur);
+    -webkit-backdrop-filter: var(--backdrop-blur);
+}
+
+.stat-action-btn:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+.dashboard-actions {
+    margin: 30px 0;
+    padding: 25px;
+    background: var(--card-premium);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border-light);
+    backdrop-filter: var(--backdrop-blur);
+    -webkit-backdrop-filter: var(--backdrop-blur);
+    box-shadow: var(--shadow-lg);
+}
+
+.dashboard-actions h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.action-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 20px;
+    border: none;
+    border-radius: var(--radius-lg);
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    justify-content: center;
+    backdrop-filter: var(--backdrop-blur);
+    -webkit-backdrop-filter: var(--backdrop-blur);
+}
+
+.action-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.action-btn:hover::before {
+    left: 100%;
+}
+
+.action-btn.primary {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.action-btn.primary:hover {
+    background: linear-gradient(135deg, var(--primary-light), var(--primary));
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-colored);
+}
+
+.action-btn.secondary {
+    background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
+    color: white;
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.action-btn.secondary:hover {
+    background: linear-gradient(135deg, var(--secondary-light), var(--secondary));
+    transform: translateY(-2px);
+    box-shadow: 0 20px 40px rgba(16, 185, 129, 0.25);
+}
+
+.action-btn.accent {
+    background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+    color: white;
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.action-btn.accent:hover {
+    background: linear-gradient(135deg, var(--accent-light), var(--accent));
+    transform: translateY(-2px);
+    box-shadow: 0 20px 40px rgba(245, 158, 11, 0.25);
+}
+
+.action-btn.outline {
+    background: var(--glass-light);
+    color: var(--text-secondary);
+    border: 2px solid var(--border-medium);
+}
+
+.action-btn.outline:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-colored);
+}
+
+.action-btn i {
+    font-size: 16px;
+    transition: var(--transition);
+}
+
+.action-btn:hover i {
+    transform: scale(1.1);
+}
+
 /* Print Styles */
 @media print {
     .header,
     .footer,
     .cta-section,
     .floating-elements,
-    .background-circles {
+    .background-circles,
+    .dashboard-actions {
         display: none;
     }
     

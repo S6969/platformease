@@ -107,6 +107,7 @@ const DashboardPreview = () => {
                 <div className="stat-info">
                   <h3>12</h3>
                   <p>Active Domains</p>
+                  <button className="stat-action-btn">Manage Domains</button>
                 </div>
               </div>
               <div className="stat-card">
@@ -116,6 +117,7 @@ const DashboardPreview = () => {
                 <div className="stat-info">
                   <h3>8</h3>
                   <p>Traffic Partners</p>
+                  <button className="stat-action-btn">Find Partners</button>
                 </div>
               </div>
               <div className="stat-card">
@@ -125,6 +127,31 @@ const DashboardPreview = () => {
                 <div className="stat-info">
                   <h3>$4,250</h3>
                   <p>Monthly Revenue</p>
+                  <button className="stat-action-btn">View Details</button>
+                </div>
+              </div>
+            </div>
+            
+            <div className="dashboard-actions">
+              <div className="action-section">
+                <h4>Quick Actions</h4>
+                <div className="action-buttons">
+                  <button className="action-btn primary">
+                    <i className="fas fa-plus"></i>
+                    <span>Add New Domain</span>
+                  </button>
+                  <button className="action-btn secondary">
+                    <i className="fas fa-handshake"></i>
+                    <span>Create Partnership</span>
+                  </button>
+                  <button className="action-btn accent">
+                    <i className="fas fa-chart-line"></i>
+                    <span>View Analytics</span>
+                  </button>
+                  <button className="action-btn outline">
+                    <i className="fas fa-cog"></i>
+                    <span>Settings</span>
+                  </button>
                 </div>
               </div>
             </div>

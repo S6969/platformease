@@ -25,12 +25,13 @@ const Header = ({ isScrolled }) => {
                 <path d="M15 15L25 15M15 15L20 28M25 15L20 28" stroke="white" strokeWidth="2" strokeLinecap="round"/>
                 <defs>
                   <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#3A86FF"/>
-                    <stop offset="100%" stopColor="#06D6A0"/>
+                    <stop offset="0%" stopColor="#6366F1"/>
+                    <stop offset="50%" stopColor="#10B981"/>
+                    <stop offset="100%" stopColor="#F59E0B"/>
                   </linearGradient>
                   <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#2a75f5"/>
-                    <stop offset="100%" stopColor="#05c695"/>
+                    <stop offset="0%" stopColor="#4F46E5"/>
+                    <stop offset="100%" stopColor="#059669"/>
                   </linearGradient>
                 </defs>
               </svg>
