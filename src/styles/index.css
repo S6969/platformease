@@ -912,6 +912,13 @@ body {
     padding: 30px;
     box-shadow: var(--shadow-xl);
     border: 1px solid var(--border-light);
+    overflow: hidden;
+}
+
+.revenue-chart canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
 }
 
 .chart-labels {

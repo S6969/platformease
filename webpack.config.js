@@ -43,11 +43,25 @@ module.exports = {
       directory: path.join(__dirname, 'dist'),
     },
     compress: true,
-    port: 5000,
+    port: 3000,
     hot: true,
-    host: '0.0.0.0',
+    host: 'localhost',
     allowedHosts: 'all',
-    historyApiFallback: true
+    historyApiFallback: true,
+    proxy: [
+      {
+        context: ['/api'],
+        target: 'http://localhost:5000',
+        changeOrigin: true,
+        secure: false
+      }
+    ],
+    client: {
+      overlay: {
+        errors: true,
+        warnings: false
+      }
+    }
   },
   mode: 'development'
 };

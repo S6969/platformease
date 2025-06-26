@@ -8,9 +8,12 @@ const RevenueSection = () => {
       const canvas = chartRef.current;
       if (!canvas) return;
 
-      const ctx = canvas.getContext('2d');
-      const width = canvas.width;
-      const height = canvas.height;
+      try {
+        const ctx = canvas.getContext('2d');
+        if (!ctx) return;
+        
+        const width = canvas.width;
+        const height = canvas.height;
 
       ctx.clearRect(0, 0, width, height);
 
@@ -78,9 +81,27 @@ const RevenueSection = () => {
         ctx.fill();
         ctx.stroke();
       });
+      } catch (error) {
+        console.warn('Canvas rendering error:', error);
+        // Fallback: Hide canvas if rendering fails
+        if (canvas) {
+          canvas.style.display = 'none';
+        }
+      }
     };
 
     createRevenueChart();
+    
+    // Handle window resize
+    const handleResize = () => {
+      setTimeout(createRevenueChart, 100);
+    };
+    
+    window.addEventListener('resize', handleResize);
+    
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   return (
@@ -89,7 +110,12 @@ const RevenueSection = () => {
         <div className="revenue-container">
           <div className="revenue-illustration">
             <div className="revenue-chart">
-              <canvas ref={chartRef} width="400" height="300"></canvas>
+              <canvas 
+                ref={chartRef} 
+                width="340" 
+                height="240"
+                style={{ maxWidth: '100%', height: 'auto' }}
+              ></canvas>
             </div>
             <div className="chart-labels">
               <div className="chart-label label-platform">

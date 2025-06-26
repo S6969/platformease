@@ -42,7 +42,7 @@ const FeaturesSection = () => {
           
           <div className="feature">
             <div className="feature-icon icon-1">
-              <i className="fas fa-analytics"></i>
+              <i className="fas fa-folder-open"></i>
             </div>
             <div className="feature-text">
               <h3>Domain Portfolio Manager</h3>
