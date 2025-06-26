@@ -40,7 +40,7 @@ const Header = ({ isScrolled }) => {
             </div>
           </div>
           
-          <div className="nav-links">
+          <div className={`nav-links ${isMobileMenuOpen ? 'mobile-active' : ''}`}>
             <a href="#home" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }}>Home</a>
             <a href="#how-it-works" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('how-it-works'); }}>How It Works</a>
             <a href="#revenue" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('revenue'); }}>Revenue</a>
@@ -48,9 +48,18 @@ const Header = ({ isScrolled }) => {
             <a href="#contact" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}>Contact</a>
           </div>
           
-          <div className="auth-buttons">
+          <div className={`auth-buttons ${isMobileMenuOpen ? 'mobile-active' : ''}`}>
             <a href="#" className="btn btn-outline">Sign In</a>
             <a href="#" className="btn btn-primary">Get Started</a>
+          </div>
+
+          <div 
+            className={`mobile-menu-toggle ${isMobileMenuOpen ? 'active' : ''}`}
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
           </div>
         </nav>
       </div>
