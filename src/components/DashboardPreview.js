@@ -159,7 +159,7 @@ const DashboardPreview = () => {
               <div className="chart-container">
                 <h4>Revenue Trends</h4>
                 <div className="mini-chart">
-                  <canvas ref={chartRef} width="300" height="150"></canvas>
+                  <canvas ref={chartRef} width="280" height="120"></canvas>
                 </div>
               </div>
               <div className="partnership-list">
