@@ -1934,19 +1934,13 @@ body {
     border-radius: var(--radius);
     font-size: 12px;
     font-weight: 500;
-    cursor: pointer;
+    cursor: default;
     transition: var(--transition);
     margin-top: 8px;
     backdrop-filter: var(--backdrop-blur);
     -webkit-backdrop-filter: var(--backdrop-blur);
-}
-
-.stat-action-btn:hover {
-    background: var(--primary);
-    color: white;
-    border-color: var(--primary);
-    transform: translateY(-1px);
-    box-shadow: var(--shadow-md);
+    user-select: none;
+    pointer-events: none;
 }
 
 .dashboard-actions {
@@ -1987,7 +1981,7 @@ body {
     border-radius: var(--radius-lg);
     font-weight: 600;
     font-size: 14px;
-    cursor: pointer;
+    cursor: default;
     transition: var(--transition);
     position: relative;
     overflow: hidden;
@@ -1995,6 +1989,8 @@ body {
     justify-content: center;
     backdrop-filter: var(--backdrop-blur);
     -webkit-backdrop-filter: var(--backdrop-blur);
+    user-select: none;
+    pointer-events: none;
 }
 
 .action-btn::before {
