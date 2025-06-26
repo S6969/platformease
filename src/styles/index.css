@@ -1034,18 +1034,16 @@ body {
 .nav-item {
     padding: 10px 20px;
     border-radius: var(--radius);
-    cursor: pointer;
+    cursor: default;
     transition: var(--transition);
     font-weight: 500;
+    user-select: none;
+    pointer-events: none;
 }
 
 .nav-item.active {
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
-}
-
-.nav-item:hover {
-    background: rgba(255, 255, 255, 0.1);
 }
 
 .dashboard-user {

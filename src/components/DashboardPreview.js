@@ -86,7 +86,6 @@ const DashboardPreview = () => {
                 <div 
                   key={tab}
                   className={`nav-item ${activeTab === tab ? 'active' : ''}`}
-                  onClick={() => setActiveTab(tab)}
                 >
                   {tab}
                 </div>
