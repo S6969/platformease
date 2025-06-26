@@ -1,56 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const DashboardPreview = () => {
-  const chartRef = useRef(null);
   const [activeTab, setActiveTab] = useState('Overview');
 
   useEffect(() => {
-    const createDashboardChart = () => {
-      const canvas = chartRef.current;
-      if (!canvas) return;
-
-      // Set canvas size to fit container
-      const container = canvas.parentElement;
-      const containerRect = container.getBoundingClientRect();
-      canvas.width = Math.min(280, containerRect.width - 20);
-      canvas.height = Math.min(120, containerRect.height - 20);
-
-      const ctx = canvas.getContext('2d');
-      const width = canvas.width;
-      const height = canvas.height;
-
-      ctx.clearRect(0, 0, width, height);
-
-      const data = [28, 35, 42, 38, 45, 52, 48, 55, 62, 58, 65, 72];
-      const maxVal = Math.max(...data);
-      const minVal = Math.min(...data);
-
-      const gradient = ctx.createLinearGradient(0, 0, 0, height);
-      gradient.addColorStop(0, '#3A86FF');
-      gradient.addColorStop(1, '#06D6A0');
-
-      const bgGradient = ctx.createLinearGradient(0, 0, 0, height);
-      bgGradient.addColorStop(0, 'rgba(58, 134, 255, 0.1)');
-      bgGradient.addColorStop(1, 'rgba(6, 214, 160, 0.05)');
-
-      ctx.fillStyle = bgGradient;
-      ctx.fillRect(0, 0, width, height);
-
-      const barWidth = (width / data.length) * 0.7;
-      const barSpacing = (width / data.length) * 0.3;
-
-      data.forEach((value, index) => {
-        const barHeight = ((value - minVal) / (maxVal - minVal)) * height * 0.8;
-        const x = index * (barWidth + barSpacing) + barSpacing / 2;
-        const y = height - barHeight - 10;
-
-        ctx.shadowColor = '#3A86FF';
-        ctx.shadowBlur = 5;
-        ctx.fillStyle = gradient;
-        ctx.fillRect(x, y, barWidth, barHeight);
-        ctx.shadowBlur = 0;
-      });
-    };
 
     const statCards = document.querySelectorAll('.stat-card');
     const dashboardObserver = new IntersectionObserver((entries) => {
@@ -60,7 +13,6 @@ const DashboardPreview = () => {
             entry.target.style.opacity = '1';
             entry.target.style.transform = 'translateY(0)';
           }, index * 100);
-          createDashboardChart();
         }
       });
     }, { threshold: 0.1 });
@@ -71,8 +23,6 @@ const DashboardPreview = () => {
       card.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
       dashboardObserver.observe(card);
     });
-
-    createDashboardChart();
 
     return () => dashboardObserver.disconnect();
   }, []);

@@ -1146,7 +1146,7 @@ body {
     font-size: 18px;
 }
 
-.mini-chart {
+.dashboard-mockup .mini-chart {
     width: 100%;
     height: 150px;
     background: linear-gradient(135deg, var(--background) 0%, var(--background-alt) 100%);
@@ -1158,7 +1158,7 @@ body {
     overflow: hidden;
 }
 
-.css-chart {
+.dashboard-mockup .css-chart {
     display: flex;
     align-items: flex-end;
     gap: 6px;
@@ -1169,7 +1169,7 @@ body {
     margin: 0 auto;
 }
 
-.chart-bar {
+.dashboard-mockup .chart-bar {
     flex: 1;
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     border-radius: var(--radius-sm);
@@ -1179,9 +1179,15 @@ body {
     box-shadow: var(--shadow-sm);
 }
 
-.chart-bar:hover {
+.dashboard-mockup .chart-bar:hover {
     opacity: 1;
     transform: scale(1.05);
+}
+
+/* Hide any chart elements outside dashboard */
+.revenue-section .css-chart,
+.revenue-section .chart-bar {
+    display: none !important;
 }
 
 .partnership-list {
