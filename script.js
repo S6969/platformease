@@ -308,6 +308,172 @@ if ('IntersectionObserver' in window) {
     });
 }
 
+// Animated number counter for hero stats
+function animateHeroNumbers() {
+    const stats = document.querySelectorAll('.stat-number[data-target]');
+    
+    const observerOptions = {
+        threshold: 0.5,
+        rootMargin: '0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const target = parseInt(entry.target.dataset.target);
+                const duration = 2000; // 2 seconds
+                const increment = target / (duration / 16); // 60fps
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    
+                    if (target >= 100000) {
+                        entry.target.textContent = '$' + (current / 1000).toFixed(0) + 'K+';
+                    } else if (target >= 1000) {
+                        entry.target.textContent = (current / 1000).toFixed(1) + 'K+';
+                    } else {
+                        entry.target.textContent = Math.floor(current).toLocaleString();
+                    }
+                }, 16);
+                
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    
+    stats.forEach(stat => observer.observe(stat));
+}
+
+// Create dashboard mini chart
+function createDashboardChart() {
+    const canvas = document.getElementById('dashboardChart');
+    if (!canvas) return;
+    
+    const ctx = canvas.getContext('2d');
+    const width = canvas.width;
+    const height = canvas.height;
+    
+    // Clear canvas
+    ctx.clearRect(0, 0, width, height);
+    
+    // Sample dashboard data - revenue growth over months
+    const data = [28, 35, 42, 38, 45, 52, 48, 55, 62, 58, 65, 72];
+    const maxVal = Math.max(...data);
+    const minVal = Math.min(...data);
+    
+    // Create gradient
+    const gradient = ctx.createLinearGradient(0, 0, 0, height);
+    gradient.addColorStop(0, '#3A86FF');
+    gradient.addColorStop(1, '#06D6A0');
+    
+    // Background gradient
+    const bgGradient = ctx.createLinearGradient(0, 0, 0, height);
+    bgGradient.addColorStop(0, 'rgba(58, 134, 255, 0.1)');
+    bgGradient.addColorStop(1, 'rgba(6, 214, 160, 0.05)');
+    
+    // Draw background
+    ctx.fillStyle = bgGradient;
+    ctx.fillRect(0, 0, width, height);
+    
+    // Draw bars
+    const barWidth = (width / data.length) * 0.7;
+    const barSpacing = (width / data.length) * 0.3;
+    
+    data.forEach((value, index) => {
+        const barHeight = ((value - minVal) / (maxVal - minVal)) * height * 0.8;
+        const x = index * (barWidth + barSpacing) + barSpacing / 2;
+        const y = height - barHeight - 10;
+        
+        // Add glow effect
+        ctx.shadowColor = '#3A86FF';
+        ctx.shadowBlur = 5;
+        ctx.fillStyle = gradient;
+        ctx.fillRect(x, y, barWidth, barHeight);
+        ctx.shadowBlur = 0;
+    });
+}
+
+// Enhanced dashboard interactivity
+function initializeDashboard() {
+    // Dashboard navigation
+    const navItems = document.querySelectorAll('.dashboard-nav .nav-item');
+    navItems.forEach(item => {
+        item.addEventListener('click', function() {
+            navItems.forEach(nav => nav.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Simulate content switching (for demo purposes)
+            const contentType = this.textContent.toLowerCase();
+            console.log(`Switching to ${contentType} view`);
+        });
+    });
+    
+    // Animate dashboard stats on scroll
+    const statCards = document.querySelectorAll('.stat-card');
+    const dashboardObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }, index * 100);
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    statCards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+        dashboardObserver.observe(card);
+    });
+    
+    // Partnership item hover effects
+    const partnershipItems = document.querySelectorAll('.partnership-item');
+    partnershipItems.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateX(10px) scale(1.02)';
+        });
+        
+        item.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateX(0) scale(1)';
+        });
+    });
+}
+
+// Initialize enhanced features
+document.addEventListener('DOMContentLoaded', function() {
+    // Call existing initialization
+    animateHeroNumbers();
+    createDashboardChart();
+    initializeDashboard();
+    
+    // Enhanced timeline animations
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    const timelineObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0) rotateX(0)';
+                }, index * 200);
+            }
+        });
+    }, { threshold: 0.2 });
+    
+    timelineItems.forEach(item => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(50px) rotateX(10deg)';
+        item.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+        timelineObserver.observe(item);
+    });
+});
+
 // Error handling
 window.addEventListener('error', (e) => {
     console.error('JavaScript error:', e.error);

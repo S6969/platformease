@@ -85,16 +85,32 @@
                     </div>
                     <div class="hero-stats">
                         <div class="stat">
-                            <div class="stat-number">2K+</div>
+                            <div class="stat-number" data-target="2000">0</div>
                             <div class="stat-label">Domain Owners</div>
                         </div>
                         <div class="stat">
-                            <div class="stat-number">3K+</div>
+                            <div class="stat-number" data-target="3000">0</div>
                             <div class="stat-label">Traffic Experts</div>
                         </div>
                         <div class="stat">
-                            <div class="stat-number">$500K+</div>
+                            <div class="stat-number" data-target="500000">0</div>
                             <div class="stat-label">Revenue Generated</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Trust Indicators -->
+                    <div class="trust-badges">
+                        <div class="badge">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Secure Partnerships</span>
+                        </div>
+                        <div class="badge">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Verified Results</span>
+                        </div>
+                        <div class="badge">
+                            <i class="fas fa-users"></i>
+                            <span>5000+ Active Users</span>
                         </div>
                     </div>
                 </div>
@@ -147,32 +163,61 @@
                 <p>Simple, effective partnership model. Connect domain owners with traffic experts in three easy steps.</p>
             </div>
             
-            <div class="cards">
-                <div class="card card-animated">
-                    <div class="card-icon icon-1">
+            <div class="process-timeline">
+                <div class="timeline-item" data-step="1">
+                    <div class="timeline-icon">
                         <i class="fas fa-user-plus"></i>
                     </div>
-                    <h3>Create Your Profile</h3>
-                    <p>Domain owners showcase their available domains and hosting resources. Traffic experts highlight their blogging skills and audience reach.</p>
-                    <div class="card-number">01</div>
+                    <div class="timeline-content">
+                        <h3>Create Your Profile</h3>
+                        <p>Join as a domain owner with hosting resources or as a traffic expert with proven skills.</p>
+                        <div class="timeline-features">
+                            <span class="feature-tag">Profile Verification</span>
+                            <span class="feature-tag">Skill Assessment</span>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="card card-animated">
-                    <div class="card-icon icon-2">
+                <div class="timeline-item" data-step="2">
+                    <div class="timeline-icon">
                         <i class="fas fa-search"></i>
                     </div>
-                    <h3>Find Perfect Matches</h3>
-                    <p>Our smart matching system connects domain owners with traffic experts based on niche expertise, audience demographics, and revenue goals.</p>
-                    <div class="card-number">02</div>
+                    <div class="timeline-content">
+                        <h3>Smart Matching</h3>
+                        <p>Our AI-powered system matches domain owners with compatible traffic experts based on niche, goals, and experience.</p>
+                        <div class="timeline-features">
+                            <span class="feature-tag">AI Matching</span>
+                            <span class="feature-tag">Compatibility Score</span>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="card card-animated">
-                    <div class="card-icon icon-3">
+                <div class="timeline-item" data-step="3">
+                    <div class="timeline-icon">
                         <i class="fas fa-handshake"></i>
                     </div>
-                    <h3>Start Earning Together</h3>
-                    <p>Domain owners provide hosting space while traffic experts create content and drive visitors. Share revenue from monetization and affiliate programs.</p>
-                    <div class="card-number">03</div>
+                    <div class="timeline-content">
+                        <h3>Start Partnership</h3>
+                        <p>Establish clear agreements, revenue sharing terms, and begin collaborative content creation.</p>
+                        <div class="timeline-features">
+                            <span class="feature-tag">Contract Templates</span>
+                            <span class="feature-tag">Revenue Tracking</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-step="4">
+                    <div class="timeline-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Track & Optimize</h3>
+                        <p>Monitor performance, track revenue, and optimize your partnership for maximum profitability.</p>
+                        <div class="timeline-features">
+                            <span class="feature-tag">Real-time Analytics</span>
+                            <span class="feature-tag">Performance Insights</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -237,12 +282,101 @@
         </div>
     </section>
 
+    <!-- Dashboard Preview Section -->
+    <section class="section dashboard-preview">
+        <div class="container">
+            <div class="section-title">
+                <h2>Partnership Dashboard</h2>
+                <p>Monitor your partnerships, track performance, and optimize revenue in real-time.</p>
+            </div>
+            
+            <div class="dashboard-mockup">
+                <div class="dashboard-header">
+                    <div class="dashboard-nav">
+                        <div class="nav-item active">Overview</div>
+                        <div class="nav-item">Partnerships</div>
+                        <div class="nav-item">Analytics</div>
+                        <div class="nav-item">Revenue</div>
+                    </div>
+                    <div class="dashboard-user">
+                        <div class="user-avatar"></div>
+                        <span>Welcome, John</span>
+                    </div>
+                </div>
+                
+                <div class="dashboard-content">
+                    <div class="dashboard-stats">
+                        <div class="stat-card">
+                            <div class="stat-icon primary">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>12</h3>
+                                <p>Active Domains</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon secondary">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>8</h3>
+                                <p>Traffic Partners</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon accent">
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>$4,250</h3>
+                                <p>Monthly Revenue</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-charts">
+                        <div class="chart-container">
+                            <h4>Revenue Trends</h4>
+                            <div class="mini-chart">
+                                <canvas id="dashboardChart" width="300" height="150"></canvas>
+                            </div>
+                        </div>
+                        <div class="partnership-list">
+                            <h4>Recent Partnerships</h4>
+                            <div class="partnership-item">
+                                <div class="partnership-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="partnership-info">
+                                    <strong>Sarah (Content Expert)</strong>
+                                    <p>TechBlog.com • +15% traffic this month</p>
+                                </div>
+                                <div class="partnership-status success">Active</div>
+                            </div>
+                            <div class="partnership-item">
+                                <div class="partnership-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="partnership-info">
+                                    <strong>Mike (SEO Specialist)</strong>
+                                    <p>HealthTips.com • +28% revenue</p>
+                                </div>
+                                <div class="partnership-status success">Active</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Features Section -->
     <section class="section" id="features">
         <div class="container">
             <div class="section-title">
-                <h2>Powerful Features</h2>
-                <p>Everything you need to connect domain owners with traffic experts and maximize revenue together.</p>
+                <h2>Advanced Platform Features</h2>
+                <p>Powerful tools designed for successful domain-traffic partnerships and maximum revenue potential.</p>
             </div>
             
             <div class="features-grid">
