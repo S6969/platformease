@@ -1157,11 +1157,13 @@ body {
 }
 
 .mini-chart canvas {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
+    max-width: 280px;
+    max-height: 120px;
+    width: 280px;
+    height: 120px;
     object-fit: contain;
+    border: none;
+    outline: none;
 }
 
 .partnership-list {

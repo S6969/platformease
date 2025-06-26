@@ -9,6 +9,12 @@ const DashboardPreview = () => {
       const canvas = chartRef.current;
       if (!canvas) return;
 
+      // Set canvas size to fit container
+      const container = canvas.parentElement;
+      const containerRect = container.getBoundingClientRect();
+      canvas.width = Math.min(280, containerRect.width - 20);
+      canvas.height = Math.min(120, containerRect.height - 20);
+
       const ctx = canvas.getContext('2d');
       const width = canvas.width;
       const height = canvas.height;
